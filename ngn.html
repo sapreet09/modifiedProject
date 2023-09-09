@@ -1,0 +1,56 @@
+<div class="Dcontainer">
+    <h1>Date Range Selector</h1>
+    
+    <!-- Radio buttons -->
+    <div>
+        <label class="radio-label">
+            <input type="radio" name="date-range" value="today"> Today
+        </label>
+        <label class="radio-label">
+            <input type="radio" name="date-range" value="week"> This Week
+        </label>
+        <label class="radio-label">
+            <input type="radio" name="date-range" value="custom"> Custom Range
+        </label>
+    </div>
+    
+    <!-- Date pickers -->
+    <div>
+        <label for="fromDate">From:</label>
+        <input type="text" id="fromDate" class="date-picker">
+    </div>
+    <div>
+        <label for="toDate">To:</label>
+        <input type="text" id="toDate" class="date-picker">
+    </div>
+
+    <!-- Buttons to submit and reset the form -->
+    <div class="mt-3">
+        <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+        <button type="button" class="btn btn-secondary" id="resetButton">Reset</button>
+    </div>
+</div>
+
+<!-- JavaScript for date picker functionality -->
+<script>
+    $(document).ready(function() {
+        // Initialize date pickers
+        $("#fromDate").datepicker();
+        $("#toDate").datepicker();
+        
+
+        // Handle submit button click
+        $("#submitButton").click(function() {
+            // Add your form submission logic here
+            alert("Form submitted!");
+        });
+
+        // Handle reset button click
+        $("#resetButton").click(function() {
+            // Reset the form
+            $("input[type='text']").val("");
+            $("input[type='radio']").prop("checked", false);
+            // $("#fromDate").prop("disabled", true);
+            // $("#toDate").prop("disabled", true);
+        });
+    });
